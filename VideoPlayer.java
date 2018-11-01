@@ -21,7 +21,7 @@ public class MoviePlayer extends Application {
 	    
 	    // System.out.print("media.width: " + media.getWidth());
 	    
-	    final VBoc vbox = new VBox();
+	    final VBox vbox = new VBox();
 	    Slider slider = new Slider();
 	    vbox.getChildren().add(slider);
 	    
