@@ -24,26 +24,42 @@ public class MoviePlayer extends Application {
 	    final VBox vbox = new VBox();
 	    Slider slider = new Slider();
 	    vbox.getChildren().add(slider);
-	    
+		
+	    final HBox hbox- new HBox(2);
+	    final int bands = player.getAudioSpectrumMumBands();
+	    final Rectangle[] rects = new Rectangle[bands};
+	    for (int i=0; i<rects.length i++) {
+		    rects[i] = new Rectangle();
+		    rects[i].setFill(Color.BLUE);
+		    hbox.getChildren().add(rects[i]);
+	    }		
+
+	    vbox.getChildren().add(hbox);
+						    
 	    root.getChildren().add(vbox);
 	    root.getChildren().add(view);
+						    
 	    media.getWidth();
 	    media.getHeight();
 	    
-	    root.getChildren().add(view);
-        Scene scene = new Scene(root, 1200, 800, color.GREEN);
+            Scene scene = new Scene(root, 1200, 800, color.GREEN);
 	    stage.setScene(scene);
 	    stage.show();
 	    
 	    player.play();
 	    player.setOnReady(new Runnable()
         {
-            
         @Override 
         public void run() {
              int w = player.getMedia().getWidth();
              int h = player.getMedia().getHeight();
         
+	     hbox.setMinWidth(w);
+	     int bandWidth = w/rects.length;
+		for (Rectangle r:rects) {
+			r.setWidth(bandWidth);
+			r.setHeight(2);
+			
              stage.setMinWidth(w);
              stage.setMinHeight(h);
              
