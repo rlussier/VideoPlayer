@@ -12,6 +12,7 @@ public class MoviePlayer extends Application {
 	
 	@Override
 	public void start(Stage stage) throws Exception {
+	    stage.setTitle("Adoni TV");
 	    Group root = new Group();
 	    
 	    Media media = new Media(" ");
@@ -32,12 +33,11 @@ public class MoviePlayer extends Application {
         @Override 
         public void run() {
             int w = player.getMedia().getWidth();
-            int h = player.getMedia().getHeight();
+             int h = player.getMedia().getHeight();
         
-            stage.setMinWidth(w);
-            stage.setMinHeight(h);
-           }
-	});
+             stage.setMinWidth(w);
+             stage.setMinHeight(h);
+            }
+	    });
     }
 }
-
