@@ -25,10 +25,10 @@ public class MoviePlayer extends Application {
 	    Slider slider = new Slider();
 	    vbox.getChildren().add(slider);
 		
-	    final HBox hbox- new HBox(2);
+	    final HBox hbox = new HBox(2);
 	    final int bands = player.getAudioSpectrumMumBands();
-	    final Rectangle[] rects = new Rectangle[bands};
-	    for (int i=0; i<rects.length i++) {
+	    final Rectangle[] rects = new Rectangle[bands];
+	    for (int i=0; i<rects.length; i++) {
 		    rects[i] = new Rectangle();
 		    rects[i].setFill(Color.BLUE);
 		    hbox.getChildren().add(rects[i]);
@@ -70,9 +70,9 @@ public class MoviePlayer extends Application {
              slider.setValue(0.0);
              slider.setMax(player.getTotalDuration().toSeconds());
             }
-	    });
+	    }
 	    
-	    player.currentTimeProperty().addListener(new ChangeListener<Duration>() {
+	    player.currentTimeProperty('').addListener(new ChangeListener<Duration>(); {
 	        @Override
 	        public void changed(ObservableValue<? extends Duration> observableValue, Duration duration, duration current) {
 	            slider.setValue(current.toSeconds());
